@@ -1,0 +1,549 @@
+{
+  "bios": {
+    "version": "1.0.0",
+    "manufacturer": "AMI",
+    "product": "ASUS ROG STRIX Z590-E GAMING",
+    "date": "2024-01-15",
+    "sections": {
+      "main": {
+        "label": "Main",
+        "fields": {
+          "bios_version": {
+            "label": "BIOS Version",
+            "value": "0602",
+            "type": "string",
+            "readonly": true
+          },
+          "bios_date": {
+            "label": "BIOS Build Date",
+            "value": "01/15/2024",
+            "type": "string",
+            "readonly": true
+          },
+          "system_language": {
+            "label": "System Language",
+            "value": "English",
+            "type": "enum",
+            "options": ["English", "Korean", "Chinese", "Japanese"],
+            "readonly": false
+          },
+          "system_date": {
+            "label": "System Date",
+            "value": "2024-01-15",
+            "type": "date",
+            "readonly": false
+          },
+          "system_time": {
+            "label": "System Time",
+            "value": "12:00:00",
+            "type": "time",
+            "readonly": false
+          }
+        }
+      },
+      "advanced": {
+        "label": "Advanced",
+        "fields": {
+          "cpu_configuration": {
+            "label": "CPU Configuration",
+            "type": "group",
+            "fields": {
+              "cpu_type": {
+                "label": "CPU Type",
+                "value": "Intel(R) Core(TM) i9-11900K",
+                "type": "string",
+                "readonly": true
+              },
+              "cpu_speed": {
+                "label": "CPU Speed",
+                "value": "3500",
+                "type": "integer",
+                "unit": "MHz",
+                "readonly": true
+              },
+              "hyper_threading": {
+                "label": "Hyper-Threading",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "cpu_cores": {
+                "label": "Active Processor Cores",
+                "value": "All",
+                "type": "enum",
+                "options": ["All", "1", "2", "4", "6", "8"],
+                "readonly": false
+              },
+              "virtualization_technology": {
+                "label": "Intel Virtualization Technology",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "vt_d": {
+                "label": "VT-d",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "speedstep": {
+                "label": "Enhanced Intel SpeedStep Technology",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "turbo_mode": {
+                "label": "Intel Turbo Boost Technology",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              }
+            }
+          },
+          "memory_configuration": {
+            "label": "Memory Configuration",
+            "type": "group",
+            "fields": {
+              "total_memory": {
+                "label": "Total Memory",
+                "value": "32768",
+                "type": "integer",
+                "unit": "MB",
+                "readonly": true
+              },
+              "memory_frequency": {
+                "label": "Memory Frequency",
+                "value": "3200",
+                "type": "integer",
+                "unit": "MHz",
+                "readonly": true
+              },
+              "memory_slots": {
+                "label": "Memory Slots",
+                "type": "array",
+                "items": [
+                  {
+                    "slot": "DIMM_A1",
+                    "status": "Populated",
+                    "size": "16384",
+                    "unit": "MB",
+                    "speed": "3200",
+                    "type": "DDR4"
+                  },
+                  {
+                    "slot": "DIMM_A2",
+                    "status": "Empty",
+                    "size": "0",
+                    "unit": "MB",
+                    "speed": null,
+                    "type": null
+                  },
+                  {
+                    "slot": "DIMM_B1",
+                    "status": "Populated",
+                    "size": "16384",
+                    "unit": "MB",
+                    "speed": "3200",
+                    "type": "DDR4"
+                  },
+                  {
+                    "slot": "DIMM_B2",
+                    "status": "Empty",
+                    "size": "0",
+                    "unit": "MB",
+                    "speed": null,
+                    "type": null
+                  }
+                ]
+              },
+              "xmp_profile": {
+                "label": "XMP Profile",
+                "value": "Profile1",
+                "type": "enum",
+                "options": ["Disabled", "Profile1", "Profile2"],
+                "readonly": false
+              },
+              "memory_timing_control": {
+                "label": "Memory Timing Control",
+                "type": "group",
+                "fields": {
+                  "cas_latency": {
+                    "label": "CAS Latency (CL)",
+                    "value": 16,
+                    "type": "integer",
+                    "readonly": false
+                  },
+                  "ras_to_cas_delay": {
+                    "label": "RAS to CAS Delay (tRCD)",
+                    "value": 18,
+                    "type": "integer",
+                    "readonly": false
+                  },
+                  "row_precharge_time": {
+                    "label": "Row Precharge Time (tRP)",
+                    "value": 18,
+                    "type": "integer",
+                    "readonly": false
+                  },
+                  "active_to_precharge_delay": {
+                    "label": "Active to Precharge Delay (tRAS)",
+                    "value": 38,
+                    "type": "integer",
+                    "readonly": false
+                  }
+                }
+              }
+            }
+          },
+          "storage_configuration": {
+            "label": "Storage Configuration",
+            "type": "group",
+            "fields": {
+              "sata_mode": {
+                "label": "SATA Mode Selection",
+                "value": "AHCI",
+                "type": "enum",
+                "options": ["IDE", "AHCI", "RAID"],
+                "readonly": false
+              },
+              "sata_ports": {
+                "label": "SATA Ports",
+                "type": "array",
+                "items": [
+                  {
+                    "port": "SATA6G_1",
+                    "enabled": true,
+                    "device": "SAMSUNG MZNLN256HAJQ"
+                  },
+                  {
+                    "port": "SATA6G_2",
+                    "enabled": true,
+                    "device": "WDC WD10EZEX"
+                  },
+                  {
+                    "port": "SATA6G_3",
+                    "enabled": false,
+                    "device": null
+                  },
+                  {
+                    "port": "SATA6G_4",
+                    "enabled": false,
+                    "device": null
+                  }
+                ]
+              },
+              "m2_slots": {
+                "label": "M.2 Slots",
+                "type": "array",
+                "items": [
+                  {
+                    "slot": "M.2_1",
+                    "enabled": true,
+                    "device": "Samsung SSD 980 PRO 1TB",
+                    "interface": "PCIe 4.0 x4"
+                  },
+                  {
+                    "slot": "M.2_2",
+                    "enabled": false,
+                    "device": null,
+                    "interface": null
+                  }
+                ]
+              }
+            }
+          },
+          "pcie_configuration": {
+            "label": "PCIe Configuration",
+            "type": "group",
+            "fields": {
+              "pcie_speed": {
+                "label": "PCIe Speed",
+                "value": "Auto",
+                "type": "enum",
+                "options": ["Auto", "Gen1", "Gen2", "Gen3", "Gen4"],
+                "readonly": false
+              },
+              "above_4g_decoding": {
+                "label": "Above 4G Decoding",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "resizable_bar": {
+                "label": "Resizable BAR Support",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              }
+            }
+          },
+          "usb_configuration": {
+            "label": "USB Configuration",
+            "type": "group",
+            "fields": {
+              "xhci_handoff": {
+                "label": "XHCI Hand-off",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "usb_mass_storage": {
+                "label": "USB Mass Storage Driver Support",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "usb_ports": {
+                "label": "USB Ports",
+                "type": "array",
+                "items": [
+                  { "port": "USB_1", "enabled": true },
+                  { "port": "USB_2", "enabled": true },
+                  { "port": "USB_3", "enabled": true },
+                  { "port": "USB_4", "enabled": true }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "boot": {
+        "label": "Boot",
+        "fields": {
+          "fast_boot": {
+            "label": "Fast Boot",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "secure_boot": {
+            "label": "Secure Boot",
+            "value": "Enabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "boot_mode": {
+            "label": "Boot Mode",
+            "value": "UEFI",
+            "type": "enum",
+            "options": ["UEFI", "Legacy", "Both"],
+            "readonly": false
+          },
+          "csm_support": {
+            "label": "CSM (Compatibility Support Module)",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "boot_order": {
+            "label": "Boot Option Priorities",
+            "type": "array",
+            "items": [
+              {
+                "priority": 1,
+                "device": "UEFI: Samsung SSD 980 PRO 1TB",
+                "type": "NVMe"
+              },
+              {
+                "priority": 2,
+                "device": "UEFI: WDC WD10EZEX",
+                "type": "HDD"
+              },
+              {
+                "priority": 3,
+                "device": "UEFI: USB Drive",
+                "type": "USB"
+              }
+            ]
+          },
+          "num_lock": {
+            "label": "NumLock State",
+            "value": "On",
+            "type": "enum",
+            "options": ["On", "Off"],
+            "readonly": false
+          },
+          "post_delay_time": {
+            "label": "POST Delay Time",
+            "value": "0",
+            "type": "integer",
+            "unit": "seconds",
+            "readonly": false
+          }
+        }
+      },
+      "security": {
+        "label": "Security",
+        "fields": {
+          "administrator_password": {
+            "label": "Administrator Password",
+            "value": "Not Installed",
+            "type": "password",
+            "readonly": false
+          },
+          "user_password": {
+            "label": "User Password",
+            "value": "Not Installed",
+            "type": "password",
+            "readonly": false
+          },
+          "tpm": {
+            "label": "TPM Configuration",
+            "type": "group",
+            "fields": {
+              "security_device_support": {
+                "label": "Security Device Support",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "tpm_device_selection": {
+                "label": "TPM Device Selection",
+                "value": "PTT",
+                "type": "enum",
+                "options": ["PTT", "Discrete TPM"],
+                "readonly": false
+              },
+              "tpm_state": {
+                "label": "TPM State",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              }
+            }
+          },
+          "secure_boot": {
+            "label": "Secure Boot",
+            "type": "group",
+            "fields": {
+              "secure_boot_state": {
+                "label": "Secure Boot State",
+                "value": "Enabled",
+                "type": "enum",
+                "options": ["Enabled", "Disabled"],
+                "readonly": false
+              },
+              "secure_boot_mode": {
+                "label": "Secure Boot Mode",
+                "value": "Standard",
+                "type": "enum",
+                "options": ["Standard", "Custom"],
+                "readonly": false
+              }
+            }
+          }
+        }
+      },
+      "power": {
+        "label": "Power",
+        "fields": {
+          "ac_power_loss": {
+            "label": "Restore AC Power Loss",
+            "value": "Power Off",
+            "type": "enum",
+            "options": ["Power Off", "Power On", "Last State"],
+            "readonly": false
+          },
+          "erp_ready": {
+            "label": "ErP Ready",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "power_on_by_pcie": {
+            "label": "Power On By PCIe",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "power_on_by_rtc": {
+            "label": "Power On By RTC",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          },
+          "power_on_by_usb": {
+            "label": "Power On By USB",
+            "value": "Disabled",
+            "type": "enum",
+            "options": ["Enabled", "Disabled"],
+            "readonly": false
+          }
+        }
+      },
+      "monitor": {
+        "label": "Monitor / H/W Monitor",
+        "fields": {
+          "cpu_temperature": {
+            "label": "CPU Temperature",
+            "value": 42,
+            "type": "integer",
+            "unit": "°C",
+            "readonly": true
+          },
+          "motherboard_temperature": {
+            "label": "Motherboard Temperature",
+            "value": 35,
+            "type": "integer",
+            "unit": "°C",
+            "readonly": true
+          },
+          "cpu_fan_speed": {
+            "label": "CPU Fan Speed",
+            "value": 1200,
+            "type": "integer",
+            "unit": "RPM",
+            "readonly": true
+          },
+          "chassis_fan_speed": {
+            "label": "Chassis Fan Speed",
+            "value": 900,
+            "type": "integer",
+            "unit": "RPM",
+            "readonly": true
+          },
+          "cpu_core_voltage": {
+            "label": "CPU Core Voltage",
+            "value": 1.25,
+            "type": "float",
+            "unit": "V",
+            "readonly": true
+          },
+          "cpu_fan_control": {
+            "label": "CPU Fan Control",
+            "value": "Auto",
+            "type": "enum",
+            "options": ["Auto", "Manual", "Silent", "Turbo"],
+            "readonly": false
+          },
+          "fan_speed_percentage": {
+            "label": "CPU Fan Speed (Manual %)",
+            "value": 50,
+            "type": "integer",
+            "unit": "%",
+            "min": 20,
+            "max": 100,
+            "readonly": false
+          }
+        }
+      }
+    }
+  }
+}
